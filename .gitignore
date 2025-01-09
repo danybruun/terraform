@@ -25,7 +25,7 @@ override.tf.json
 
 # Ignore transient lock info files created by terraform apply
 .terraform.tfstate.lock.info
-.terraform.tfstate.lock.hcl
+.terraform.lock.hcl
 
 # Ignore CLI configuration files
 .terraformrc
