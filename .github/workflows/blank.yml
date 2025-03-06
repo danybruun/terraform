@@ -38,4 +38,5 @@ jobs:
       # Test tf code
       - name: Run plan
         run: |
+          terraform init
           terraform plan
