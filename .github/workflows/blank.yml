@@ -34,3 +34,8 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      # Test tf code
+      - name: Run plan
+        run: |
+          terraform plan
