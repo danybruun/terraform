@@ -19,6 +19,9 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: self-hosted
+    env:
+      # Instruct the AzureRM provider to use the managed identity.
+      ARM_USE_MSI: "true"
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
