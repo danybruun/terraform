@@ -51,7 +51,7 @@ jobs:
       # Test tf code
       - name: Run plan
         run: |
-          terraform init -backend-config="./environment/prod/backend.config"
+          terraform init -backend-config="./environment/prod/backend.config" -backend-config="subscription_id=${{ secrets.SUBSCRIPTION_ID }}"
           terraform plan
 
       # Terraform apply
