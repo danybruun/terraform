@@ -7,7 +7,7 @@ terraform {
     #container_name       = "tfstate"
     #key                  = "terraform.tfstate" # Name of the state file
     # subscription_id = ${var.subscription_id}
-  }
+  #}
   required_providers {
   azurerm = {
     source  = "hashicorp/azurerm"
