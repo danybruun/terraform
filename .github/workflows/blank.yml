@@ -51,9 +51,9 @@ jobs:
       # Test tf code
       - name: Run plan
         run: |
-          terraform init -backend-config=/environment/${{ vars.ENVIRONMENT }}/backend.config
-          terraform plan -backend-config=/environment/${{ vars.ENVIRONMENT }}/backend.config
+          terraform init -backend-config=./environment/${{ vars.ENVIRONMENT }}/backend.config
+          terraform plan -backend-config=./environment/${{ vars.ENVIRONMENT }}/backend.config
 
       # Terraform apply
       - name: Terraform Apply
-        run: terraform apply -auto-approve -backend-config=/environment/${{ vars.ENVIRONMENT }}/backend.config
+        run: terraform apply -auto-approve -backend-config=./environment/${{ vars.ENVIRONMENT }}/backend.config
