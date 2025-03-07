@@ -18,7 +18,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # Specify the GitHub environment
-    environment: prod
+    environment: ${{ vars.ENVIRONMENT }}
     # The type of runner that the job will run on
     runs-on: self-hosted
     env:
@@ -51,9 +51,9 @@ jobs:
       # Test tf code
       - name: Run plan
         run: |
-          terraform init
-          terraform plan
+          terraform init -backend-config=/environment/${{ vars.ENVIRONMENT }}/backend.config
+          terraform plan -backend-config=/environment/${{ vars.ENVIRONMENT }}/backend.config
 
       # Terraform apply
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve -backend-config=/environment/${{ vars.ENVIRONMENT }}/backend.config
