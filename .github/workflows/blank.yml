@@ -22,6 +22,10 @@ jobs:
     env:
       # Instruct the AzureRM provider to use the managed identity.
       ARM_USE_MSI: "true"
+      # Passing a normal variable:
+      TF_VAR_environment: ${{ env.ENVIRONMENT }}
+      # Passing a secret (make sure this secret is set in your repository or organization):
+      TF_VAR_subscription_id: ${{ secrets.SUBSCRIPTION_ID }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
