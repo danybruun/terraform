@@ -6,7 +6,7 @@ terraform {
     storage_account_name = "nondairystate"
     container_name       = "tfstate"
     key                  = "terraform.tfstate" # Name of the state file
-    subscription_id = "226f9a6d-884e-464e-a75a-8f55d46726c4"
+    subscription_id = ${{ secrets.SUBSCRIPTION_ID }}
   }
   required_providers {
   azurerm = {
@@ -18,12 +18,12 @@ terraform {
 
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
-  subscription_id = "226f9a6d-884e-464e-a75a-8f55d46726c4"
+  subscription_id = ${{ secrets.SUBSCRIPTION_ID }}
   features {}
 }
 
 # Create a resource group
-resource "azurerm_resource_group" "testing" {
+/*resource "azurerm_resource_group" "testing" {
   name     = "testing"
   location = "norwayeast"
 }
@@ -35,3 +35,4 @@ resource "azurerm_virtual_network" "testing" {
   location            = azurerm_resource_group.testing.location
   address_space       = ["10.0.0.0/16"]
 }
+*/
