@@ -2,7 +2,7 @@
 # Azure Provider source and version being used
 terraform {
   backend "azurerm" {
-    resource_group_name  = "terraform"
+    resource_group_name  = "runner"
     storage_account_name = "nondairystate"
     container_name       = "tfstate"
     key                  = "terraform.tfstate" # Name of the state file
