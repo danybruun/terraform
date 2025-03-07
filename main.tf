@@ -6,6 +6,7 @@ terraform {
     storage_account_name = "nondairystate"
     container_name       = "tfstate"
     key                  = "terraform.tfstate" # Name of the state file
+    subscription_id = "226f9a6d-884e-464e-a75a-8f55d46726c4"
   }
   required_providers {
   azurerm = {
