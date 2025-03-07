@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Set managed identity poermission as well
+
 #Install AZ-cli
 sudo apt-get update
 sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg
